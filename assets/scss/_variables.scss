@@ -3,7 +3,7 @@
 
 $sans-serif: -apple-system, BlinkMacSystemFont, 'avenir next', avenir, helvetica, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial, sans-serif !default;
 $serif: georgia, serif !default;
-$code: consolas, monaco, monospace !default;
+$code: menlo, monaco, consolas, monospace !default;
 $font-size-headline: 6rem !default;
 $font-size-subheadline: 5rem !default;
 $font-size-1: 3rem !default;
@@ -105,7 +105,7 @@ $white-05: rgba(255,255,255,.05) !default;
 $white-025: rgba(255,255,255,.025) !default;
 $white-0125: rgba(255,255,255,.0125) !default;
 $dark-red: #e7040f !default;
-$red: #ff4136 !default;
+$red: rgba(255, 44, 73, 0.75) !default;
 $light-red: #ff725c !default;
 $orange: #ff6300 !default;
 $gold: #ffb700 !default;
@@ -113,6 +113,7 @@ $yellow: #ffd700 !default;
 $light-yellow: #fbf1a9 !default;
 $purple: #5e2ca5 !default;
 $light-purple: #a463f2 !default;
+$red-pink: #ff2052 !default;
 $dark-pink: #d5008f !default;
 $hot-pink: #ff41b4 !default;
 $pink: #ff80cc !default;
@@ -122,19 +123,23 @@ $green: #19a974 !default;
 $light-green: #9eebcf !default;
 $navy: #001b44 !default;
 $dark-blue: #00449e !default;
+$dark-mauve: #382E48 !default;
 $blue: #357edd !default;
 $light-blue: #96ccff !default;
 $lightest-blue: #cdecff !default;
 $washed-blue: #f6fffe !default;
 $washed-green: #e8fdf5 !default;
 $washed-yellow: #fffceb !default;
+$washed-gold: #ffe4c4 !default;
+$yellowed-white: #FEF7EF !default;
+$pale-blue: #7d7ca0 !default;
 $washed-red: #ffdfdf !default;
 
 // Custom Media Query Variables
 
-$breakpoint-not-small: 'screen and (min-width: 30em)' !default;
-$breakpoint-medium: 'screen and (min-width: 30em) and (max-width: 60em)' !default;
-$breakpoint-large: 'screen and (min-width: 60em)' !default;
+$breakpoint-not-small: '(min-width: 30em)' !default;
+$breakpoint-medium: '(min-width: 30em) and (max-width: 60em)' !default;
+$breakpoint-large: '(min-width: 60em)' !default;
 
 /*
 

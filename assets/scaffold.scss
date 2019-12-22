@@ -158,30 +158,38 @@ form {
     @extend .f5, .measure-wide, .ba, .bw0, .b--transparent, .pa0, .mv3, .mh0 ;
   }
   label {
-    @extend .db, .f6, .lh-copy ;
+    @extend .db, .f6, .fw5, .lh-copy ;
   }
   select,
   [type="text"],
   [type="email"] {
-    @extend .input-reset, .pa3, .mt2, .mb3, .ba, .br0, .b--#{$borderColor}, .bg-transparent, .w-100 ;
+    @extend .input-reset, .pa3, .mt2, .mb3, .ba, .bw1, .br1, .b--#{$borderColor}, .bg-transparent, .w-100 ;
   }
   [type="button"],
   [type="reset"],
   [type="submit"] {
-    @extend .input-reset, .ph4, .pv3, .mb3, .f6, .ttu, .tracked, .b, .bw1, .br0, .b--transparent, .link, .pointer, .bg-animate, .#{$buttonTextColor}, .hover-#{$buttonHoverTextColor}, .bg-#{$buttonBgColor}, .hover-bg-#{$buttonHoverBgColor} ;
+    @extend .input-reset, .ph4, .pv3, .mb3, .f6, .ttu, .tracked, .b, .bw1, .br1, .b--transparent, .link, .pointer, .bg-animate, .#{$buttonTextColor}, .hover-#{$buttonHoverTextColor}, .bg-#{$buttonBgColor}, .hover-bg-#{$buttonHoverBgColor} ;
   }
   input[type="radio"],
   input[type="checkbox"] {
     @extend .mv2, .mh1 ;
   }
   textarea {
-    @extend .input-reset, .pa3, .mt2, .mb3, .mh0, .lh-copy, .ba, .br0, .b--#{$borderColor}, .bg-transparent, .w-100 ;
+    @extend .input-reset, .pa3, .mt2, .mb3, .mh0, .lh-copy, .bw1, .ba, .br1, .b--#{$borderColor}, .bg-transparent, .w-100 ;
   }
+  select::placeholder,
+  textarea::placeholder,
+  [type="text"]::placeholder,
+  [type="email"]::placeholder {
+    @extend .mid-gray ;
+  }
+
   select:focus,
   textarea:focus,
   [type="text"]:focus,
   [type="email"]:focus {
-    @extend .bg-white-50 ;
+    @extend .bg-white-80 ;
+    outline-color: $dark-mauve;
   }
 }
 
@@ -199,10 +207,11 @@ form {
 // CSS GRID SCAFFOLD
 .grid-container {
   @extend .w-100 ;
+  min-height: 100vh;
 
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(3, auto);
+  grid-template-rows: 0.1fr auto;
   grid-auto-flow: dense;
   grid-gap: 0px;
   margin: 0px auto;
@@ -237,10 +246,21 @@ form {
 
 // SCAFFOLD MEDIA QUERY
 @media screen and (max-width: 768px) {
+  .grid-container {
+    grid-template-rows: auto 0.1fr;
+  }
+
   .site-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
     order: 1;
   }
-  .page-main {
+  .page-main:not(.home-main) {
+    order: 0;
+  }
+  .page-main.home-main {
     order: 2;
   }
   .page-sidebar {
@@ -267,4 +287,33 @@ form {
       grid-column: 1 / 7;
     }
   }
+}
+
+.link:focus,
+form :focus[type=button],
+form :focus[type=reset],
+form :focus[type=submit],
+.home .action.button:focus,
+.home .action.text:focus {
+  @extend .bg-animate, .bg-black, .white, .br2;
+  outline: none;
+}
+
+a:focus {
+  outline-color: currentColor;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+:root {
+  --dark-mode-toggle-icon-size: 2rem;
+  --dark-mode-toggle-dark-icon: url("/images/icons/sun.svg");
+  --dark-mode-toggle-light-icon: url("/images/icons/moon.svg");
+  --dark-mode-toggle-dark-focus-background: black;
+  --dark-mode-toggle-light-focus-background: white;
+}
+body {
+  transition: background-color 0.3s ease-out;
 }
