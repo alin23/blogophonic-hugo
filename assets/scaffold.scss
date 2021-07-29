@@ -84,7 +84,7 @@ h1, h2, h3, h4, h5, h6 {
     cite { @extend .f6, .i ; }
   }
 
-  ul, ol, dl { @extend .measure, .lh-copy ; }
+  ul, ol, dl { @extend .lh-copy ; max-width: 90%; }
   > dl dt { @extend .pl3, .b, .mb2 ; }
 
   hr { @extend .mv4, .ba, .b--#{$borderColor} ; }
@@ -299,13 +299,6 @@ form :focus[type=submit],
   outline: none;
 }
 
-a:focus {
-  outline-color: currentColor;
-}
-
-a {
-  text-decoration: none !important;
-}
 
 :root {
   --dark-mode-toggle-icon-size: 2rem;
@@ -320,4 +313,26 @@ body {
 
 .w-min {
     width: min-content;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition-property: box-shadow, color, opacity, background !important;
+  transition-duration: .2s, .4s, .2s, .2s !important;
+  transition-timing-function: ease-out !important;
+}
+
+a:focus {
+  outline-color: currentColor;
+}
+
+main a:not(.link) {
+  box-shadow: inset 0 -.1em 0 0 hsla(240, 13%, 80%, 0.5);
+}
+
+main a:hover:not(.link) {
+  color: #888;
+  box-shadow: inset 0 -.25em 0 0 hsla(240, 13%, 80%, 1);
 }
