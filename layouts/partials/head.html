@@ -15,5 +15,5 @@
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
   {{ end }}
   {{ $styles := resources.Get "scaffold.scss" | resources.ExecuteAsTemplate "style.main.scss" . | toCSS | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
+  <link rel="stylesheet" href="{{ $styles.Permalink }}" crossorigin="anonymous" integrity="{{ $styles.Data.Integrity }}" media="screen">
 </head>
