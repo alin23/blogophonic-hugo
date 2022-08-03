@@ -97,7 +97,11 @@ h1, h2, h3, h4, h5, h6 {
     cite { @extend .f6, .i ; }
   }
 
-  ul, ol, dl { @extend .lh-copy ; max-width: 90%; }
+  ul, ol, dl { @extend .lh-copy ; }
+  ul, ol, dl { max-width: 90% ; }
+  @media (max-width: 640px) {
+    ul, ol, dl { max-width: 100% ; }
+  }
   > dl dt { @extend .pl3, .b, .mb2 ; }
 
   hr { @extend .mv4, .ba, .b--#{$borderColor} ; }
