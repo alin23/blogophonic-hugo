@@ -10,7 +10,7 @@ author: Alin Panaitiu
 draft: true
 image: "{{ .Name }}.png"
 images:
-    - "{{ .Name }}.png"
+    - "https://img.panaitiu.com/_/og/plain/https%3A%2F%2Falinpanaitiu.com%2Fimages%2F{{ .Name }}.png@webp"
 
 series:
 tags:
