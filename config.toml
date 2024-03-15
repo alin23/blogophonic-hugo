@@ -1,7 +1,6 @@
 baseURL = "/"
 languageCode = "en"
 title = "Blogophonic"
-author = "Formspree"
 description = "A modern, beautiful, and easily configurable blog theme for Hugo."
 copyright = "" # set to override the auto generated copyright using org info and now year
 googleAnalytics = ""
@@ -17,6 +16,7 @@ paginate = 3
 preserveTaxonomyNames = true
 
 [params]
+  author = "Formspree"
   orgName = "Formspree"
   orgLocal = "Brooklyn, NY"
   favicon = "/img/favicon.ico?v=0"
@@ -46,15 +46,15 @@ preserveTaxonomyNames = true
   socialInHeader = false
   socialInFooter = false
 
-[social]
-  # social accounts (username only)
-  facebook = "formspree"
-  facebook_admin = "" # Facebook Page Admin ID for Domain Insights
-  instagram = ""
-  youtube = ""
-  twitter = "formspree"
-  github = "formspree"
-  medium = ""
+  [social]
+    # social accounts (username only)
+    facebook = "formspree"
+    facebook_admin = "" # Facebook Page Admin ID for Domain Insights
+    instagram = ""
+    youtube = ""
+    twitter = "formspree"
+    github = "formspree"
+    medium = ""
 
 [taxonomies]
   category = "categories"
