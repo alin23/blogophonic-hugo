@@ -91,12 +91,16 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   blockquote {
-    @extend .ml0, .pl3, .bl, .bw2,, .b--#{$borderColor} ;
+    @extend .ml0, .pl3, .bl, .bw2, .b--#{$borderColor} ;
 
     max-width: 40em;
 
     p {
       opacity: 0.6;
+      font-size: 0.9rem;
+    }
+
+    em, b, strong, i {
       font-size: 0.9rem;
     }
 
